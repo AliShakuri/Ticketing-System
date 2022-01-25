@@ -40,11 +40,13 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework.authtoken',
+    'djoser',
 
     # my apps
     'user.apps.UserConfig',
     'department.apps.DepartmentConfig',
     'ticket.apps.TicketConfig',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +136,9 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
