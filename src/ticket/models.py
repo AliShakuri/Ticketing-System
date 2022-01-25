@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.utils import timezone
 from department.models import Department
 
-
+# Ticket model
 class Ticket(models.Model):
     title = models.CharField(max_length=50)
     department = models.ForeignKey(Department, null=True, blank=True, on_delete=models.SET_NULL, related_name='tickets')

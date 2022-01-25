@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from department.models import Department
 
-
+# User model
 class User(AbstractUser):
     ROLE = {
         ('1', 'normal user'),
